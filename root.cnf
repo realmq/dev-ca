@@ -1,0 +1,19 @@
+[req]
+distinguished_name = req_distinguished_name
+prompt = no
+x509_extensions = v3_ca
+
+[req_distinguished_name]
+C = DE
+ST = Berlin
+L = Berlin
+O = RealMQ
+OU = RealMQ Dev Certificate Authority
+CN = RealMQ Root Dev CA
+emailAddress = dev-ca@realmq.com
+
+[v3_ca]
+subjectKeyIdentifier = hash
+authorityKeyIdentifier = keyid:always,issuer
+basicConstraints = critical, CA:true
+keyUsage = critical, digitalSignature, cRLSign, keyCertSign
