@@ -49,6 +49,11 @@ dev-ca --domain="my-org.local"
 * Set destination directory via `-v|--volume` parameter. (Defaults to `${CWD}/certificates`)
 * Set owning user via `-u|--user` parameter. (Defaults to `${USER}`)
 
+## Roadmap
+
+* Add documentation on how to install/trust self-signed root certificates
+* Add docker compose setup example for nginx tls termination
+
 ## License
 Copyright (c) 2019 [RealMQ GmbH](https://realmq.com).<br />
 The files in this archive are released under the [MIT License](LICENSE).
