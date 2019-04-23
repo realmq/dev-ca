@@ -27,7 +27,7 @@ echo "Including ${san}"
 echo "Running as user ${user}"
 echo "Writing certificates to ${volume}"
 
-$(docker run --rm -v ${volume}:/data/certificates -u $(id -u ${user}):$(id -g ${user}) -e TLD=${domain} -e SAN="${san}" realmq/dev-ca)
+$(docker run --rm -v ${volume}:/data/certificates -u $(id -u ${user}):$(id -g ${user}) -e DOMAIN=${domain} -e SAN="${san}" realmq/dev-ca)
 
 echo ""
 echo "🙌 Certificates have been generated!"

@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
-: ${SAN="dev.local"}
+: ${SAN=""}
 
-SAN_DEFINITION=""
+formatted_san=""
 
 while
     # read the first dns or ip from SAN input
@@ -16,16 +16,16 @@ INPUT
         # check if $dnsOrIp matches
         isIp=$(echo $dnsOrIp | grep -E '\b(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}\b')
 
-        if [ "${SAN_DEFINITION}n" != "n" ] ; then
-            SAN_DEFINITION="${SAN_DEFINITION},"
+        if [ "${formatted_san}n" != "n" ] ; then
+            formatted_san="${formatted_san},"
         fi
 
         if [ "${isIp}n" != "n" ] ; then
             # add to san definition as IP record
-            SAN_DEFINITION="${SAN_DEFINITION}IP:${dnsOrIp}"
+            formatted_san="${formatted_san}IP:${dnsOrIp}"
         else
             # add to san definition as DNS record
-            SAN_DEFINITION="${SAN_DEFINITION}DNS:${dnsOrIp}"
+            formatted_san="${formatted_san}DNS:${dnsOrIp}"
         fi
     fi
 
@@ -33,4 +33,4 @@ INPUT
     [ "${SAN}n" != "n" ]
 do :; done
 
-echo $SAN_DEFINITION
+echo $formatted_san

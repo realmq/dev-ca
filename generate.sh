@@ -1,16 +1,15 @@
 #!/bin/sh
 set -a
-: ${TLD=dev.local}
-: ${SAN_DEFINITION=""}
+: ${DOMAIN=localhost}
 set +a
 
-: ${SAN=""}
+: ${SAN="127.0.0.1"}
 : ${CONF_PATH="/data/config"}
 : ${CERT_PATH="/data/certificates"}
 : ${ROOT_CERT_EXPIRATION_DAYS=36500}
 : ${LEAF_CERT_EXPIRATION_DAYS=36500}
 
-export SAN="$TLD $SAN"
+export SAN="$DOMAIN $SAN"
 set -a
 ALT_NAMES="$(./format-san.sh)"
 set +a
@@ -18,14 +17,14 @@ set +a
 root_cnf="${CONF_PATH}/root.cnf"
 leaf_cnf="${CONF_PATH}/leaf.cnf"
 
-tld_cnf="${CERT_PATH}/${TLD}_tld.txt"
+tld_cnf="${CERT_PATH}/${DOMAIN}_names.txt"
 root_key="${CERT_PATH}/root.key.pem"
 root_csr="${CERT_PATH}/root.csr.pem"
 root_crt="${CERT_PATH}/root.crt.pem"
 root_srl="${CERT_PATH}/root.srl"
-leaf_key="${CERT_PATH}/${TLD}.key.pem"
-leaf_csr="${CERT_PATH}/${TLD}.csr.pem"
-leaf_crt="${CERT_PATH}/${TLD}.crt.pem"
+leaf_key="${CERT_PATH}/${DOMAIN}.key.pem"
+leaf_csr="${CERT_PATH}/${DOMAIN}.csr.pem"
+leaf_crt="${CERT_PATH}/${DOMAIN}.crt.pem"
 
 if [ ! -f "$root_cnf" ]
 then

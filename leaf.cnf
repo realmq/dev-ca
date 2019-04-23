@@ -9,8 +9,8 @@ ST = Berlin
 L = Berlin
 O = RealMQ
 OU = Development
-CN = ${ENV::TLD}
-emailAddress = dev@${ENV::TLD}
+CN = ${ENV::DOMAIN}
+emailAddress = dev@${ENV::DOMAIN}
 
 [v3_req]
 keyUsage = keyEncipherment, dataEncipherment
