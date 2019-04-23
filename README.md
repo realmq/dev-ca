@@ -1,4 +1,7 @@
 # :closed_lock_with_key: RealMQ Dev CA - Local Development Certificates
+[![MIT License](https://badgen.net/github/license/realmq/dev-ca "Mit License")](https://github.com/realmq/dev-ca/blob/master/LICENSE)
+[![realmq/dev-ca on docker hub](https://badgen.net/docker/pulls/realmq/dev-ca "realmq/dev-ca on docker hub")](https://hub.docker.com/r/realmq/dev-ca)
+
 
 `dev-ca` is a docker image for generating self signed root and leaf certificates for local development,
 making it easy to manage and use local dev certificates.
