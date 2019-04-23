@@ -15,7 +15,7 @@ It makes it easy to manage and use local dev certificates.
 * Dev certificates are generated for a main domain (**DOMAIN** defaults to `localhost`).
 * They can be issued for any number of alternative domains and ip addresses (**SAN** defaults to `127.0.0.1`)
 
-### Use with docker
+### Use with docker :whale:
 Generate dev certificates to local directory via docker:
 
 ```bash
@@ -30,7 +30,7 @@ docker run --rm \
 * `-u $(id -u ${user}):$(id -g ${user})` makes sure your certificates are accessible by current user. If you omit this option certificates are owned by `root:root`.
 * You can include additional domains and ip-addresses by passing them via `-e SAN="another.tld 10.10.0.1"`
 
-### Use convenient CLI tool
+### Use convenient CLI tool :computer:
 
 Install our [cli wrapper](https://github.com/realmq/dev-ca/blob/master/dev-ca.sh):
 
