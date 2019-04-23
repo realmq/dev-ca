@@ -1,6 +1,6 @@
 # Docker Dev Certificates
 `dev-ca` is a docker image for generating self signed root and leaf certificates for local development.
-It makes it easy to generate and use local dev certificates.
+It makes it easy to manage and use local dev certificates.
 
 * Manage generation of local root certificate.
 * Trusted once, you can use any domain locally with TLS enabled.
